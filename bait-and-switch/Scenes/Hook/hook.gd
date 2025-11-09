@@ -20,10 +20,13 @@ func _physics_process(_delta: float) -> void:
 	if self.global_position.y > 250:
 		velocity.y = -350
 	elif self.global_position.y < -271:
+		var fish_caught = false
 		for child in self.get_children():
 			if child is Fish:
-				fish_is_caught.emit()
-				break
+				fish_caught = true
+				child.queue_free()
+		if fish_caught: 
+			fish_is_caught.emit()
 		
 		velocity.y = 0
 		self.global_position.y += 1

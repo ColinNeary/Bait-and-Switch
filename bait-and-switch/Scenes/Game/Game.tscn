@@ -153,76 +153,13 @@ offset_right = 407.0
 offset_bottom = 210.0
 script = ExtResource("11_10ki7")
 
-[node name="False0" type="RichTextLabel" parent="E-mail Dialog Box/Popup Window"]
-visible = false
+[node name="Email" type="RichTextLabel" parent="E-mail Dialog Box/Popup Window"]
 layout_mode = 0
 offset_left = 18.0
 offset_top = 28.0
 offset_right = 387.0
 offset_bottom = 370.0
-text = "From: sam@atroilia.com
-Subject: Your Account Needs Action
-
-Good Evening,
-
-Your Capitol One Bank account has been vulnerabled by a security breach affecting thousands of americans. Please reply to this email immediately so that we can assist you further
-
-Salutations,
-CAPITOL ONE"
-
-[node name="False1" type="RichTextLabel" parent="E-mail Dialog Box/Popup Window"]
-visible = false
-layout_mode = 0
-offset_left = 18.0
-offset_top = 28.0
-offset_right = 387.0
-offset_bottom = 370.0
-text = "From: capitalone@update-win.com
-Subject: Your Account Needs Urgent Action
-
-This email is to notify you of a potential breach on your account. Please sign into your account at the following link to learn more: Information Protection Center."
-
-[node name="False2" type="RichTextLabel" parent="E-mail Dialog Box/Popup Window"]
-visible = false
-layout_mode = 0
-offset_left = 18.0
-offset_top = 28.0
-offset_right = 387.0
-offset_bottom = 370.0
-text = "From: captialone@update-win.com
-Subject: Credit One Breach Info
-
-This email is to notify you of a potential breach on your account. Pleaz click the following link to learn mor: Information Protection Center"
-
-[node name="True0" type="RichTextLabel" parent="E-mail Dialog Box/Popup Window"]
-visible = false
-layout_mode = 0
-offset_left = 18.0
-offset_top = 28.0
-offset_right = 387.0
-offset_bottom = 370.0
-text = "From: support@capitalone.com
-Subject: Your Account Needs Action
-
-This email is to notify you of a potential security breach on your account. Your account has been frozen for your safety. Please speak with a live representative as soon as possible.
-
-Thank you for being a Capital One Customer"
-
-[node name="True1" type="RichTextLabel" parent="E-mail Dialog Box/Popup Window"]
-visible = false
-layout_mode = 0
-offset_left = 18.0
-offset_top = 28.0
-offset_right = 387.0
-offset_bottom = 370.0
-text = "From: support@capitalone.com
-Subject: Your Rewards Are Waiting
-
-Hello,
-
-You have unused rewards waiting on your Capital One account! Sign in to use them before they expire.
-
-Thank you for being a Capital One Customer"
+text = "TEST"
 
 [node name="Bait Button" type="Button" parent="E-mail Dialog Box/Popup Window"]
 layout_mode = 0

@@ -6,7 +6,7 @@ signal fish_is_caught()
 @export var acceleration:float = 2
 
 
-func _input(event: InputEvent) -> void:
+func _input(_event: InputEvent) -> void:
 	if Input.is_action_pressed("move_left"):
 		velocity.x = -200
 	elif Input.is_action_pressed("move_right"):
@@ -16,11 +16,10 @@ func _input(event: InputEvent) -> void:
 	else:
 		velocity.x = 0
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if self.global_position.y > 250:
 		velocity.y = -350
 	elif self.global_position.y < -271:
-		var num_fish:int = 0
 		for child in self.get_children():
 			if child is Fish:
 				fish_is_caught.emit()

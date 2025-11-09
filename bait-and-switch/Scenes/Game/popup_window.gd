@@ -2,6 +2,9 @@ extends Panel
 
 var is_bait = false
 
+func _ready() -> void:
+	$"../../Hook".fish_is_caught.connect(create_new_message)
+	pass
 
 func create_new_message() -> void:
 	var email = self.get_child(randi() % 5)

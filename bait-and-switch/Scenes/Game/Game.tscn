@@ -1,22 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://cui1c0ifu1yoh"]
+[gd_scene load_steps=12 format=3 uid="uid://cui1c0ifu1yoh"]
 
 [ext_resource type="Script" uid="uid://b6wh5ewydaep5" path="res://Scenes/Game/game.gd" id="1_hqwdr"]
 [ext_resource type="Texture2D" uid="uid://dtih6hj3civpq" path="res://assets/backdrop_01.png" id="2_3586x"]
-[ext_resource type="Script" uid="uid://bkwjyh0ya77od" path="res://Scenes/Fishes/fish.gd" id="2_vrr3t"]
-[ext_resource type="Texture2D" uid="uid://ciy1grsunqcmg" path="res://assets/fish_01.png" id="3_iv3md"]
 [ext_resource type="Script" uid="uid://c7u1ravjdncec" path="res://Scenes/Kill Zone/kill_zone.gd" id="4_ln2h6"]
+[ext_resource type="PackedScene" uid="uid://40skl5m1k7fn" path="res://Scenes/Spawner/Spawner.tscn" id="4_y3kpf"]
 [ext_resource type="Texture2D" uid="uid://446fkh3isr8w" path="res://assets/seaweed_frame01.png" id="5_gvja8"]
 [ext_resource type="Texture2D" uid="uid://ccqf47ka3p8tc" path="res://assets/seaweed_frame02.png" id="6_m1o7v"]
 [ext_resource type="Texture2D" uid="uid://ba2fxw0wod06c" path="res://assets/seaweed_frame03.png" id="7_3586x"]
 [ext_resource type="Texture2D" uid="uid://0m5k7gn2ui8l" path="res://assets/seaweed_frame04.png" id="8_10ki7"]
 [ext_resource type="Texture2D" uid="uid://whdkq554k6kl" path="res://assets/bubble_01.png" id="9_m1o7v"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iv3md"]
-radius = 13.0
-height = 66.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iv3md"]
-size = Vector2(237, 1314)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ti1oi"]
 animations = [{
@@ -38,28 +30,85 @@ animations = [{
 "speed": 2.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iv3md"]
+size = Vector2(237, 1314)
+
 [node name="Game" type="Node2D"]
 script = ExtResource("1_hqwdr")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Decor" type="Node2D" parent="."]
 
-[node name="Backdrop01" type="Sprite2D" parent="."]
+[node name="Backdrop01" type="Sprite2D" parent="Decor"]
 position = Vector2(-16, -62)
 texture = ExtResource("2_3586x")
 
-[node name="Fish" type="CharacterBody2D" parent="."]
-position = Vector2(-531, 56)
-script = ExtResource("2_vrr3t")
-MAX_SPEED = 75.0
-MAX_BOB = 25.0
-acceleration = 2.0
+[node name="Seaweed1" type="AnimatedSprite2D" parent="Decor"]
+position = Vector2(-497, 240.625)
+scale = Vector2(0.75, 1.1283334)
+sprite_frames = SubResource("SpriteFrames_ti1oi")
+frame_progress = 0.82388246
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Fish"]
-rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_iv3md")
+[node name="Seaweed2" type="AnimatedSprite2D" parent="Decor"]
+position = Vector2(-357, 265)
+scale = Vector2(0.75, 1.1283334)
+sprite_frames = SubResource("SpriteFrames_ti1oi")
+frame_progress = 0.9222746
 
-[node name="Sprite2D" type="Sprite2D" parent="Fish"]
-texture = ExtResource("3_iv3md")
+[node name="Seaweed3" type="AnimatedSprite2D" parent="Decor"]
+position = Vector2(-227, 241)
+scale = Vector2(0.75, 1.1283334)
+sprite_frames = SubResource("SpriteFrames_ti1oi")
+frame_progress = 0.98233294
+
+[node name="Seaweed4" type="AnimatedSprite2D" parent="Decor"]
+position = Vector2(-77.5, 240.25002)
+scale = Vector2(0.75, 1.1283334)
+skew = 0.12217295
+sprite_frames = SubResource("SpriteFrames_ti1oi")
+frame_progress = 0.9590692
+
+[node name="Seaweed5" type="AnimatedSprite2D" parent="Decor"]
+position = Vector2(75.999985, 264)
+scale = Vector2(0.75, 1.1283334)
+skew = 0.12217295
+sprite_frames = SubResource("SpriteFrames_ti1oi")
+frame_progress = 0.9244886
+
+[node name="Seaweed7" type="AnimatedSprite2D" parent="Decor"]
+position = Vector2(232.5, 239.24998)
+scale = Vector2(0.75, 1.1283334)
+skew = -0.09075713
+sprite_frames = SubResource("SpriteFrames_ti1oi")
+frame_progress = 0.4580137
+
+[node name="Seaweed8" type="AnimatedSprite2D" parent="Decor"]
+position = Vector2(375.5, 238.625)
+scale = Vector2(0.75, 1.1283334)
+sprite_frames = SubResource("SpriteFrames_ti1oi")
+frame_progress = 0.23995148
+
+[node name="Seaweed9" type="AnimatedSprite2D" parent="Decor"]
+position = Vector2(505.5, 239.625)
+scale = Vector2(0.75, 1.1283334)
+sprite_frames = SubResource("SpriteFrames_ti1oi")
+frame_progress = 0.87658864
+
+[node name="Bubble01" type="Sprite2D" parent="Decor"]
+position = Vector2(-363, 155)
+texture = ExtResource("9_m1o7v")
+
+[node name="Bubble02" type="Sprite2D" parent="Decor"]
+position = Vector2(-339.75, 110.75)
+scale = Vector2(0.62903225, 0.62903225)
+texture = ExtResource("9_m1o7v")
+
+[node name="Left Fish Spawner" parent="." instance=ExtResource("4_y3kpf")]
+position = Vector2(-350, 0)
+spawn_delay = 1.0
+
+[node name="Right Fish Spawner" parent="." instance=ExtResource("4_y3kpf")]
+position = Vector2(350, 0)
+spawn_delay = 1.0
 
 [node name="Right Kill Zone" type="Area2D" parent="."]
 monitorable = false
@@ -69,62 +118,14 @@ script = ExtResource("4_ln2h6")
 position = Vector2(1078, -56)
 shape = SubResource("RectangleShape2D_iv3md")
 
-[node name="Seaweed1" type="AnimatedSprite2D" parent="."]
-position = Vector2(-497, 240.625)
-scale = Vector2(0.75, 1.1283334)
-sprite_frames = SubResource("SpriteFrames_ti1oi")
-frame_progress = 0.82388246
+[node name="Left Kill Zone" type="Area2D" parent="."]
+monitorable = false
+script = ExtResource("4_ln2h6")
 
-[node name="Seaweed2" type="AnimatedSprite2D" parent="."]
-position = Vector2(-357, 265)
-scale = Vector2(0.75, 1.1283334)
-sprite_frames = SubResource("SpriteFrames_ti1oi")
-frame_progress = 0.9222746
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left Kill Zone"]
+position = Vector2(-1069, -56)
+shape = SubResource("RectangleShape2D_iv3md")
 
-[node name="Seaweed3" type="AnimatedSprite2D" parent="."]
-position = Vector2(-227, 241)
-scale = Vector2(0.75, 1.1283334)
-sprite_frames = SubResource("SpriteFrames_ti1oi")
-frame_progress = 0.98233294
+[node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Seaweed4" type="AnimatedSprite2D" parent="."]
-position = Vector2(-77.5, 240.25002)
-scale = Vector2(0.75, 1.1283334)
-skew = 0.12217305
-sprite_frames = SubResource("SpriteFrames_ti1oi")
-frame_progress = 0.9590692
-
-[node name="Seaweed5" type="AnimatedSprite2D" parent="."]
-position = Vector2(75.999985, 264)
-scale = Vector2(0.75, 1.1283334)
-skew = 0.12217305
-sprite_frames = SubResource("SpriteFrames_ti1oi")
-frame_progress = 0.9244886
-
-[node name="Seaweed7" type="AnimatedSprite2D" parent="."]
-position = Vector2(232.5, 239.24998)
-scale = Vector2(0.75, 1.1283334)
-skew = -0.090757124
-sprite_frames = SubResource("SpriteFrames_ti1oi")
-frame_progress = 0.4580137
-
-[node name="Seaweed8" type="AnimatedSprite2D" parent="."]
-position = Vector2(375.5, 238.625)
-scale = Vector2(0.75, 1.1283334)
-sprite_frames = SubResource("SpriteFrames_ti1oi")
-frame_progress = 0.23995148
-
-[node name="Seaweed9" type="AnimatedSprite2D" parent="."]
-position = Vector2(505.5, 239.625)
-scale = Vector2(0.75, 1.1283334)
-sprite_frames = SubResource("SpriteFrames_ti1oi")
-frame_progress = 0.87658864
-
-[node name="Bubble01" type="Sprite2D" parent="."]
-position = Vector2(-363, 155)
-texture = ExtResource("9_m1o7v")
-
-[node name="Bubble01" type="Sprite2D" parent="Bubble01"]
-position = Vector2(23.25, -44.25)
-scale = Vector2(0.62903225, 0.62903225)
-texture = ExtResource("9_m1o7v")
+[node name="Fishes" type="Node2D" parent="."]

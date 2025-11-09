@@ -14,3 +14,11 @@ config/name="Bait-and-Switch"
 run/main_scene="uid://cwrnavcd1ypx6"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Globals="*res://Globals.gd"
+
+[layer_names]
+
+2d_physics/layer_1="Fish"

@@ -113,11 +113,11 @@ texture = ExtResource("9_m1o7v")
 
 [node name="Left Fish Spawner" parent="." instance=ExtResource("4_y3kpf")]
 position = Vector2(-700, 0)
-spawn_delay = 1.0
+spawn_delay = 1.5
 
 [node name="Right Fish Spawner" parent="." instance=ExtResource("4_y3kpf")]
 position = Vector2(700, 0)
-spawn_delay = 1.0
+MAX_BOB = 150.0
 
 [node name="Right Kill Zone" type="Area2D" parent="."]
 monitorable = false
@@ -141,3 +141,11 @@ shape = SubResource("RectangleShape2D_iv3md")
 
 [node name="Hook" parent="." instance=ExtResource("10_3586x")]
 position = Vector2(-5, -271)
+
+[node name="Money" type="RichTextLabel" parent="."]
+offset_left = 430.0
+offset_top = -281.0
+offset_right = 584.0
+offset_bottom = -186.0
+theme_override_font_sizes/normal_font_size = 32
+text = "500"

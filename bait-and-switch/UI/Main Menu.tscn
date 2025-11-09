@@ -7,12 +7,31 @@ script = ExtResource("1_6iuai")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Button" type="Button" parent="."]
-offset_left = 182.0
-offset_top = 147.0
-offset_right = 477.0
-offset_bottom = 232.0
+[node name="Easy Button" type="Button" parent="."]
+offset_left = -147.0
+offset_top = 64.0
+offset_right = 148.0
+offset_bottom = 149.0
 theme_override_font_sizes/font_size = 32
-text = "Play Game"
+text = "Easy
+"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="Medium Button" type="Button" parent="."]
+offset_left = -147.0
+offset_top = -39.0
+offset_right = 148.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 32
+text = "Medium"
+
+[node name="Hard Button" type="Button" parent="."]
+offset_left = -146.0
+offset_top = -134.0
+offset_right = 149.0
+offset_bottom = -49.0
+theme_override_font_sizes/font_size = 32
+text = "Hard"
+
+[connection signal="pressed" from="Easy Button" to="." method="_on_easy_button_pressed"]
+[connection signal="pressed" from="Medium Button" to="." method="_on_medium_button_pressed"]
+[connection signal="pressed" from="Hard Button" to="." method="_on_hard_button_pressed"]

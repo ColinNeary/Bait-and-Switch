@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Fish
 
 @export var MAX_SPEED:float
 ## Max undilation of y velocity

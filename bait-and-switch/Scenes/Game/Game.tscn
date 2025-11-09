@@ -1,13 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cui1c0ifu1yoh"]
+[gd_scene load_steps=6 format=3 uid="uid://cui1c0ifu1yoh"]
 
 [ext_resource type="Script" uid="uid://b6wh5ewydaep5" path="res://Scenes/Game/game.gd" id="1_hqwdr"]
-[ext_resource type="Script" uid="uid://bkwjyh0ya77od" path="res://Scenes/Fishes/fish.gd" id="2_vrr3t"]
-[ext_resource type="Texture2D" uid="uid://ciy1grsunqcmg" path="res://assets/fish_01.png" id="3_iv3md"]
+[ext_resource type="PackedScene" uid="uid://p5sqwa0ax0bk" path="res://Scenes/Fishes/fish.tscn" id="2_ln2h6"]
 [ext_resource type="Script" uid="uid://c7u1ravjdncec" path="res://Scenes/Kill Zone/kill_zone.gd" id="4_ln2h6"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iv3md"]
-radius = 13.0
-height = 66.0
+[ext_resource type="PackedScene" uid="uid://40skl5m1k7fn" path="res://Scenes/Spawner/Spawner.tscn" id="4_y3kpf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iv3md"]
 size = Vector2(237, 1314)
@@ -17,19 +13,8 @@ script = ExtResource("1_hqwdr")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Fish" type="CharacterBody2D" parent="."]
-position = Vector2(-531, 56)
-script = ExtResource("2_vrr3t")
-MAX_SPEED = 75.0
-MAX_BOB = 25.0
-acceleration = 2.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Fish"]
-rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_iv3md")
-
-[node name="Sprite2D" type="Sprite2D" parent="Fish"]
-texture = ExtResource("3_iv3md")
+[node name="Fish" parent="." instance=ExtResource("2_ln2h6")]
+position = Vector2(-577, 55)
 
 [node name="Right Kill Zone" type="Area2D" parent="."]
 monitorable = false
@@ -38,3 +23,8 @@ script = ExtResource("4_ln2h6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Right Kill Zone"]
 position = Vector2(1078, -56)
 shape = SubResource("RectangleShape2D_iv3md")
+
+[node name="Spawner" parent="." instance=ExtResource("4_y3kpf")]
+position = Vector2(1, 69)
+
+[connection signal="body_entered" from="Right Kill Zone" to="Right Kill Zone" method="_on_body_entered"]

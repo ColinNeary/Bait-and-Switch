@@ -47,7 +47,7 @@ position = Vector2(-497, 240.625)
 scale = Vector2(0.75, 1.1283334)
 sprite_frames = SubResource("SpriteFrames_ti1oi")
 autoplay = "default"
-frame_progress = 0.6263423
+frame_progress = 0.323786
 
 [node name="Seaweed2" type="AnimatedSprite2D" parent="Decor"]
 position = Vector2(-357, 265)
@@ -137,3 +137,22 @@ shape = SubResource("RectangleShape2D_iv3md")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Fishes" type="Node2D" parent="."]
+
+[node name="Email" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Popup Window" type="Panel" parent="Email"]
+visible = false
+offset_left = -486.0
+offset_top = -236.0
+offset_right = -70.0
+offset_bottom = -19.0
+
+[node name="Body" type="RichTextLabel" parent="Email/Popup Window"]
+visible = false
+layout_mode = 0
+offset_left = 16.0
+offset_top = 28.0
+offset_right = 399.0
+offset_bottom = 197.0
+text = "Help!"

@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal fish_is_caught()
+
 @export var target_speed:float = 100
 @export var acceleration:float = 2
 
@@ -18,6 +20,9 @@ func _physics_process(delta: float) -> void:
 	if self.global_position.y > 250:
 		velocity.y = -350
 	elif self.global_position.y < -271:
+		for child in self.get_children():
+			if child is Fish:
+				fish_is_caught.emit()
 		velocity.y = 0
 		self.global_position.y += 1
 	move_and_slide()

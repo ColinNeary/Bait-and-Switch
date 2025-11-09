@@ -3,17 +3,27 @@ extends CharacterBody2D
 @export var target_speed:float = 100
 @export var acceleration:float = 2
 
-var target_direction:Vector2 = Vector2(0, 0)
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("move_left"):
-		target_direction = Vector2.LEFT
-	elif event.is_action_pressed("move_right"):
-		target_direction = Vector2.RIGHT
-	elif event.is_action_pressed("release"):
-		pass
+	if Input.is_action_pressed("move_left"):
+		velocity.x = -200
+	elif Input.is_action_pressed("move_right"):
+		velocity.x = 200
+	elif Input.is_action_just_pressed("release"):
+		velocity.y = 400
 	else:
-		target_direction = Vector2.ZERO
+		velocity.x = 0
 
 func _physics_process(delta: float) -> void:
-	velocity = velocity.move_toward(target_direction * target_speed, acceleration*delta)
+	if self.global_position.y > 250:
+		velocity.y = -350
+	elif self.global_position.y < -271:
+		velocity.y = 0
+		self.global_position.y += 1
+	move_and_slide()
+
+
+func _on_hook_zone_body_entered(body: Node2D) -> void:
+	if body is Fish:
+		body.process_mode = Node.PROCESS_MODE_DISABLED
+		body.reparent(self)

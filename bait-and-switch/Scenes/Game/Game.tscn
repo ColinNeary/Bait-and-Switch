@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cui1c0ifu1yoh"]
+[gd_scene load_steps=13 format=3 uid="uid://cui1c0ifu1yoh"]
 
 [ext_resource type="Script" uid="uid://b6wh5ewydaep5" path="res://Scenes/Game/game.gd" id="1_hqwdr"]
 [ext_resource type="Texture2D" uid="uid://dtih6hj3civpq" path="res://assets/backdrop_01.png" id="2_3586x"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ba2fxw0wod06c" path="res://assets/seaweed_frame03.png" id="7_3586x"]
 [ext_resource type="Texture2D" uid="uid://0m5k7gn2ui8l" path="res://assets/seaweed_frame04.png" id="8_10ki7"]
 [ext_resource type="Texture2D" uid="uid://whdkq554k6kl" path="res://assets/bubble_01.png" id="9_m1o7v"]
+[ext_resource type="PackedScene" uid="uid://d0yuw70y5ci5p" path="res://Scenes/Hook/Hook.tscn" id="10_3586x"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ti1oi"]
 animations = [{
@@ -111,11 +112,11 @@ scale = Vector2(0.62903225, 0.62903225)
 texture = ExtResource("9_m1o7v")
 
 [node name="Left Fish Spawner" parent="." instance=ExtResource("4_y3kpf")]
-position = Vector2(-350, 0)
+position = Vector2(-700, 0)
 spawn_delay = 1.0
 
 [node name="Right Fish Spawner" parent="." instance=ExtResource("4_y3kpf")]
-position = Vector2(350, 0)
+position = Vector2(700, 0)
 spawn_delay = 1.0
 
 [node name="Right Kill Zone" type="Area2D" parent="."]
@@ -137,3 +138,6 @@ shape = SubResource("RectangleShape2D_iv3md")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Fishes" type="Node2D" parent="."]
+
+[node name="Hook" parent="." instance=ExtResource("10_3586x")]
+position = Vector2(-5, -271)

@@ -7,9 +7,9 @@ func _ready() -> void:
 	pass
 
 func create_new_message() -> void:
-	var email = self.get_child(randi() % 5)
-	self.visible = true
+	var email = self.get_child(randi() % 6)
 	email.visible = true
+	self.visible = true
 	if email.name.contains("False"):
 		is_bait = true
 	else:

@@ -22,6 +22,7 @@ texture = ExtResource("2_x4oa4")
 
 [node name="Hook Zone" type="Area2D" parent="."]
 collision_layer = 0
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hook Zone"]
 position = Vector2(-1, 13)

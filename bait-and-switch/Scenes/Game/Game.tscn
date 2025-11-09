@@ -46,18 +46,21 @@ texture = ExtResource("2_3586x")
 position = Vector2(-497, 240.625)
 scale = Vector2(0.75, 1.1283334)
 sprite_frames = SubResource("SpriteFrames_ti1oi")
-frame_progress = 0.82388246
+autoplay = "default"
+frame_progress = 0.6263423
 
 [node name="Seaweed2" type="AnimatedSprite2D" parent="Decor"]
 position = Vector2(-357, 265)
 scale = Vector2(0.75, 1.1283334)
 sprite_frames = SubResource("SpriteFrames_ti1oi")
+autoplay = "default"
 frame_progress = 0.9222746
 
 [node name="Seaweed3" type="AnimatedSprite2D" parent="Decor"]
 position = Vector2(-227, 241)
 scale = Vector2(0.75, 1.1283334)
 sprite_frames = SubResource("SpriteFrames_ti1oi")
+autoplay = "default"
 frame_progress = 0.98233294
 
 [node name="Seaweed4" type="AnimatedSprite2D" parent="Decor"]
@@ -65,6 +68,7 @@ position = Vector2(-77.5, 240.25002)
 scale = Vector2(0.75, 1.1283334)
 skew = 0.12217295
 sprite_frames = SubResource("SpriteFrames_ti1oi")
+autoplay = "default"
 frame_progress = 0.9590692
 
 [node name="Seaweed5" type="AnimatedSprite2D" parent="Decor"]
@@ -72,6 +76,7 @@ position = Vector2(75.999985, 264)
 scale = Vector2(0.75, 1.1283334)
 skew = 0.12217295
 sprite_frames = SubResource("SpriteFrames_ti1oi")
+autoplay = "default"
 frame_progress = 0.9244886
 
 [node name="Seaweed7" type="AnimatedSprite2D" parent="Decor"]
@@ -79,18 +84,21 @@ position = Vector2(232.5, 239.24998)
 scale = Vector2(0.75, 1.1283334)
 skew = -0.09075713
 sprite_frames = SubResource("SpriteFrames_ti1oi")
+autoplay = "default"
 frame_progress = 0.4580137
 
 [node name="Seaweed8" type="AnimatedSprite2D" parent="Decor"]
 position = Vector2(375.5, 238.625)
 scale = Vector2(0.75, 1.1283334)
 sprite_frames = SubResource("SpriteFrames_ti1oi")
+autoplay = "default"
 frame_progress = 0.23995148
 
 [node name="Seaweed9" type="AnimatedSprite2D" parent="Decor"]
 position = Vector2(505.5, 239.625)
 scale = Vector2(0.75, 1.1283334)
 sprite_frames = SubResource("SpriteFrames_ti1oi")
+autoplay = "default"
 frame_progress = 0.87658864
 
 [node name="Bubble01" type="Sprite2D" parent="Decor"]

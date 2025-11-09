@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-signal fish_is_caught(amount:int)
+signal fish_is_caught()
 
 @export var target_speed:float = 100
 @export var acceleration:float = 2
@@ -23,9 +23,8 @@ func _physics_process(delta: float) -> void:
 		var num_fish:int = 0
 		for child in self.get_children():
 			if child is Fish:
-				num_fish += 1
-		if num_fish > 0:
-			fish_is_caught.emit(num_fish)
+				fish_is_caught.emit()
+				break
 		
 		velocity.y = 0
 		self.global_position.y += 1

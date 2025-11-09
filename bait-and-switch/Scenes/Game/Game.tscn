@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cui1c0ifu1yoh"]
+[gd_scene load_steps=14 format=3 uid="uid://cui1c0ifu1yoh"]
 
 [ext_resource type="Script" uid="uid://b6wh5ewydaep5" path="res://Scenes/Game/game.gd" id="1_hqwdr"]
 [ext_resource type="Texture2D" uid="uid://dtih6hj3civpq" path="res://assets/backdrop_01.png" id="2_3586x"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://0m5k7gn2ui8l" path="res://assets/seaweed_frame04.png" id="8_10ki7"]
 [ext_resource type="Texture2D" uid="uid://whdkq554k6kl" path="res://assets/bubble_01.png" id="9_m1o7v"]
 [ext_resource type="PackedScene" uid="uid://d0yuw70y5ci5p" path="res://Scenes/Hook/Hook.tscn" id="10_3586x"]
+[ext_resource type="Script" uid="uid://dfxspgjx8veq4" path="res://Scenes/Game/popup_window.gd" id="11_10ki7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ti1oi"]
 animations = [{
@@ -48,7 +49,7 @@ position = Vector2(-497, 240.625)
 scale = Vector2(0.75, 1.1283334)
 sprite_frames = SubResource("SpriteFrames_ti1oi")
 autoplay = "default"
-frame_progress = 0.6263423
+frame_progress = 0.323786
 
 [node name="Seaweed2" type="AnimatedSprite2D" parent="Decor"]
 position = Vector2(-357, 265)
@@ -142,6 +143,48 @@ shape = SubResource("RectangleShape2D_iv3md")
 [node name="Hook" parent="." instance=ExtResource("10_3586x")]
 position = Vector2(-5, -271)
 
+[node name="E-mail Dialog Box" type="CanvasLayer" parent="."]
+
+[node name="Popup Window" type="Panel" parent="E-mail Dialog Box"]
+offset_top = -243.0
+offset_right = 407.0
+offset_bottom = 210.0
+script = ExtResource("11_10ki7")
+
+[node name="Body" type="RichTextLabel" parent="E-mail Dialog Box/Popup Window"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 28.0
+offset_right = 387.0
+offset_bottom = 370.0
+text = "From: sam@atroilia.com
+Subject: Your Account Needs Action
+
+Good Evening,
+
+Your Capitol One Bank account has been vulnerabled by a security breach affecting thousands of americans. Please reply to this email immediately so that we can assist you further
+
+Salutations,
+CAPITOL ONE"
+
+[node name="Bait Button" type="Button" parent="E-mail Dialog Box/Popup Window"]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 387.0
+offset_right = 257.0
+offset_bottom = 430.0
+text = "Bait"
+
+[node name="Reel Button" type="Button" parent="E-mail Dialog Box/Popup Window"]
+layout_mode = 0
+offset_left = 279.0
+offset_top = 387.0
+offset_right = 390.0
+offset_bottom = 430.0
+text = "Reel
+"
+
+[connection signal="pressed" from="E-mail Dialog Box/Popup Window/Bait Button" to="E-mail Dialog Box/Popup Window" method="_on_bait_button_pressed"]
 [node name="Money" type="RichTextLabel" parent="."]
 offset_left = 430.0
 offset_top = -281.0

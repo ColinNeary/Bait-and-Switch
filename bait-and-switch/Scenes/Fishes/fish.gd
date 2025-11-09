@@ -27,6 +27,6 @@ func invert_fish_dir() -> void:
 func _physics_process(delta: float) -> void:
 	elapsed_time += delta
 	velocity.y = MAX_BOB_DIST * sin(BOB_FREQ_MULTIPLIER*elapsed_time)
-	velocity.x = move_toward(velocity.x, MAX_SPEED, acceleration)
+	velocity.x = move_toward(velocity.x, MAX_SPEED, acceleration*delta)
 	
 	move_and_slide()
